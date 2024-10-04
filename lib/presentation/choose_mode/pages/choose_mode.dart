@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:music_player/common/widgets/button/basic_app_button.dart';
 import 'package:music_player/core/configs/assets/app_images.dart';
 import 'package:music_player/core/configs/assets/app_vectors.dart';
+import 'package:music_player/presentation/auth/pages/choose_auth.dart';
 import 'package:music_player/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
@@ -127,7 +128,16 @@ class ChooseModePage extends StatelessWidget {
                 const SizedBox(
                   height: 50,
                 ),
-                BasicAppButton(onPressed: () {}, title: "Continue")
+                BasicAppButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const ChooseAuth(),
+                        ),
+                      );
+                    },
+                    title: "Continue")
               ],
             ),
           )
